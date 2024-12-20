@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="job.css">
+    <title>Job Vacancies</title>
+</head>
+<body>
+    <header>
+        <h1>Job Vacancies</h1>
+        <input type="text" id="searchBox" placeholder="Search for a job..." onkeyup="searchJobs()">
+    </header>
+    <main>
+        <div class="job-list" id="jobList">
+            <div class="job-card">
+                <h2>Software Developer</h2>
+                <p>Company: Tech Innovators</p>
+                <p>Location: New York, NY</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h2>Graphic Designer</h2>
+                <p>Company: Creative Minds</p>
+                <p>Location: San Francisco, CA</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h2>Data Scientist</h2>
+                <p>Company: Data Analytics Co.</p>
+                <p>Location: Chicago, IL</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h2>Data Scientist</h2>
+                <p>Company: Data Analytics Co.</p>
+                <p>Location: Chicago, IL</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h2>Data Scientist</h2>
+                <p>Company: Data Analytics Co.</p>
+                <p>Location: Chicago, IL</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h2>Data Scientist</h2>
+                <p>Company: Data Analytics Co.</p>
+                <p>Location: Chicago, IL</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h2>Data Scientist</h2>
+                <p>Company: Data Analytics Co.</p>
+                <p>Location: Chicago, IL</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h2>Data Scientist</h2>
+                <p>Company: Data Analytics Co.</p>
+                <p>Location: Chicago, IL</p>
+                <button>Apply Now</button>
+            </div>
+            <div class="job-card">
+                <h2>Data Scientist</h2>
+                <p>Company: Data Analytics Co.</p>
+                <p>Location: Chicago, IL</p>
+                <button>Apply Now</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        function searchJobs() {
+            const input = document.getElementById('searchBox').value.toLowerCase();
+            const jobCards = document.getElementsByClassName('job-card');
+            
+            for (let i = 0; i < jobCards.length; i++) {
+                const jobTitle = jobCards[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+                const company = jobCards[i].getElementsByTagName('p')[0].innerText.toLowerCase();
+                const location = jobCards[i].getElementsByTagName('p')[1].innerText.toLowerCase();
+                
+                if (jobTitle.includes(input) || company.includes(input) || location.includes(input)) {
+                    jobCards[i].style.display = "";
+                } else {
+                    jobCards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
